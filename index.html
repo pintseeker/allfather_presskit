@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <!--
   ALLFATHER press kit. Single static page, no build step.
-  Host: push this folder to a GitHub repo, enable Pages on the main branch root.
-
-  PLACEHOLDERS: everything wrapped in <span class="todo"> or marked TODO below
-  is unconfirmed and must be filled/rewritten by Tommy before the page goes live.
-  Drafted prose (long description, history, features) is a first pass from the
-  design docs and is expected to be rewritten.
+  Hosted on GitHub Pages: commit + push to deploy.
 -->
 <html lang="en">
 <head>
@@ -101,10 +96,6 @@
     margin: 34px 0 12px;
   }
 
-  .cols { display: flex; gap: 48px; flex-wrap: wrap; }
-  .cols > .fact { flex: 1 1 260px; }
-  .cols > .desc { flex: 2 1 400px; }
-
   dl.factsheet { margin: 0; }
   dl.factsheet dt {
     color: var(--gold);
@@ -178,60 +169,16 @@
 </header>
 
 <nav>
-  <a href="#factsheet">Factsheet</a>
-  <a href="#about">About</a>
   <a href="#features">Features</a>
   <a href="#videos">Videos</a>
   <a href="#images">Images</a>
-  <a href="#credits">Credits</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <main>
 
-<section id="factsheet">
-  <h2>Factsheet</h2>
-  <div class="cols">
-    <div class="fact">
-      <dl class="factsheet">
-        <dt>Developer</dt>
-        <dd>Tommy McKay</dd>
-        <dt>Based in</dt>
-        <dd>Australia</dd>
-        <dt>Release date</dt>
-        <dd>Coming 2027</dd>
-        <dt>Platforms</dt>
-        <dd>PC (Steam, Windows)</dd>
-        <dt>Engine</dt>
-        <dd>Godot</dd>
-        <dt>Steam page</dt>
-        <dd><a href="https://store.steampowered.com/app/4744230/ALLFATHER/">store.steampowered.com/app/4744230/ALLFATHER</a></dd>
-        <dt>Press contact</dt>
-        <dd><a href="mailto:tommymckaybne@gmail.com">tommymckaybne@gmail.com</a></dd>
-        <dt>Social</dt>
-        <dd><a href="https://www.youtube.com/@tommythedev">YouTube</a> / <a href="https://discord.gg/HPbaMKY79J">Discord</a></dd>
-      </dl>
-    </div>
-    <div class="desc" id="about">
-      <h2>About</h2>
-      <p>A brutal, first-person roguelike with precise, stamina-driven combat. Play as a fallen shieldmaiden who rejects the judgement of the Valkyries. Prove to the gods you deserve their favour and use their blessings to crawl from the depths of Helheim to the halls of Valhalla.</p>
-
-      <h3>Long description</h3>
-      <p class="note">Draft for rewrite. Assembled from the design docs, not final press copy.</p>
-      <p>You were a shieldmaiden. You died well. The Valkyries sent you to Hel anyway. ALLFATHER is a first-person roguelike about refusing that judgement: fight your way up from the realm of the dead, through regions sealed behind their keepers, to the gates of Valhalla.</p>
-      <p>Combat runs in real time and rewards precision. Manage stamina, read attacks, block at the last moment to turn a hit into an opening, and choose weapons that change how you fight, from sword and shield to bow to a pair of axes. Enemies fight for position around you, and every room is a fight you cannot back out of: doors seal behind you, and the only way out is forward.</p>
-      <p>The gods are watching, and most of them are not on Odin's side. Level up and choose blessings from the Norse pantheon, spend gold at the dwarf Brokkr's forge for relics, and shape a different build every run. Death is permanent, but Hel's domain remembers you: unlock runes and weapons between runs and walk back in stronger.</p>
-      <p>The whole descent is rendered in a deliberately old-school low-poly style: dark, grainy, Norse.</p>
-
-      <h3>History</h3>
-      <p>ALLFATHER is the solo project of Tommy McKay, an Australian developer who previously shipped Gnomes and Sea of Survivors on Steam. It is built in Godot, with commissioned key art and a small circle of contract collaborators for 3D art, animation, and voice acting.</p>
-    </div>
-  </div>
-</section>
-
 <section id="features">
   <h2>Features</h2>
-  <p class="note">Draft for rewrite. Counts deliberately left out where content is still growing.</p>
   <ul class="features">
     <li>Real-time first-person combat built on stamina, spacing, and timing. Perfectly timed blocks turn an enemy's attack into your opening.</li>
     <li>Distinct weapons with their own movesets: sword and shield, dual axes, the longaxe, and the bow.</li>
@@ -322,22 +269,6 @@
     <figure><img loading="lazy" src="assets/capsule-library-hero.png" alt="Library hero capsule"><figcaption>Library hero</figcaption></figure>
     <figure><img loading="lazy" src="assets/capsule-small.png" alt="Small capsule"><figcaption>Small capsule</figcaption></figure>
   </div>
-</section>
-
-<section id="credits">
-  <h2>Credits</h2>
-  <dl class="factsheet">
-    <dt>Tommy McKay</dt>
-    <dd>Design, programming, everything else</dd>
-    <dt>Anton Konrad (Arangemenk9000)</dt>
-    <dd>Lead 3D Art Supplier and Consultant</dd>
-    <dt>Max Ponsness</dt>
-    <dd>Voice Acting, The Shieldmaiden</dd>
-    <dt>Muhammad Danish</dt>
-    <dd>Character Animations</dd>
-    <dt>Giovanni Fim</dt>
-    <dd>Key art and capsule illustration</dd>
-  </dl>
 </section>
 
 <section id="contact">
