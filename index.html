@@ -82,6 +82,28 @@
     margin: 12px auto 0;
     text-shadow: 0 2px 8px rgba(0,0,0,.9);
   }
+  .platform-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .platform-row a {
+    display: inline-block;
+    padding: 9px 24px;
+    border: 1px solid var(--gold);
+    background: rgba(0,0,0,.55);
+    color: var(--gold-bright);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: 14px;
+  }
+  .platform-row a:hover {
+    background: var(--gold);
+    color: #14100a;
+  }
 
   nav {
     position: sticky;
@@ -198,17 +220,27 @@
     <div><a class="wishlist" href="https://store.steampowered.com/app/4744230/ALLFATHER/"><img src="assets/wishlist-on-steam.png" alt="Wishlist ALLFATHER on Steam"></a></div>
     <h1>ALLFATHER: First Person, Roguelike, Dungeon Crawler</h1>
     <p class="hero-desc">A brutal, first-person roguelike with precise, stamina-driven combat. Play as a fallen shieldmaiden who rejects the judgement of the Valkyries. Proving to the gods she deserves their favour, she uses their blessings to crawl from the depths of Helheim to the halls of Valhalla.</p>
+    <div class="platform-row">
+      <a href="https://www.youtube.com/@tommythedev">YouTube</a>
+      <a href="https://discord.gg/HPbaMKY79J">Discord</a>
+      <a href="https://www.reddit.com/r/AllfatherGame/">Reddit</a>
+    </div>
   </div>
 </header>
 
 <nav>
   <a href="#features">Features</a>
-  <a href="#videos">Videos</a>
   <a href="#images">Images</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <main>
+
+<section id="trailer">
+  <div class="video-frame">
+    <iframe src="https://www.youtube-nocookie.com/embed/OOHqhjWDbV0" title="ALLFATHER trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</section>
 
 <section id="features">
   <h2>Features</h2>
@@ -221,13 +253,6 @@
     <li>Permadeath with a persistent home in Hel's domain: a rune tree, weapon unlocks, and characters who remember you.</li>
     <li>A dark Norse world in a deliberate PSX-era visual style.</li>
   </ul>
-</section>
-
-<section id="videos">
-  <h2>Videos</h2>
-  <div class="video-frame">
-    <iframe src="https://www.youtube-nocookie.com/embed/OOHqhjWDbV0" title="ALLFATHER trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
 </section>
 
 <section id="images">
@@ -308,9 +333,9 @@
     <dt>Steam</dt>
     <dd><a href="https://store.steampowered.com/app/4744230/ALLFATHER/">ALLFATHER on Steam</a></dd>
     <dt>YouTube</dt>
-    <dd><a href="https://www.youtube.com/@tommythedev">youtube.com/@tommythedev</a></dd>
+    <dd><a href="https://www.youtube.com/@tommythedev">@tommythedev</a></dd>
     <dt>Discord</dt>
-    <dd><a href="https://discord.gg/HPbaMKY79J">discord.gg/HPbaMKY79J</a></dd>
+    <dd><a href="https://discord.gg/HPbaMKY79J">Join the Discord</a></dd>
     <dt>Reddit</dt>
     <dd><a href="https://www.reddit.com/r/AllfatherGame/">r/AllfatherGame</a></dd>
   </dl>
