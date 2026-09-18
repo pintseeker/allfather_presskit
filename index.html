@@ -34,7 +34,7 @@
   a:hover { color: #fff; }
 
   header.hero {
-    background: url('assets/background-page.png') center / cover no-repeat, var(--bg);
+    background: url('assets/background-slide.png') center / cover no-repeat, var(--bg);
     text-align: center;
     padding: 72px 16px 56px;
     border-bottom: 2px solid var(--gold);
@@ -51,6 +51,13 @@
     font-size: 14px;
     color: var(--gold);
   }
+  header.hero .wishlist img {
+    max-width: 260px;
+    height: auto;
+    margin-top: 26px;
+    transition: transform .1s ease;
+  }
+  header.hero .wishlist img:hover { transform: scale(1.04); }
 
   nav {
     position: sticky;
@@ -117,6 +124,8 @@
     gap: 14px;
     margin: 8px 0 24px;
   }
+  .grid.small { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .grid.small img { max-height: 320px; object-fit: contain; }
   .grid figure { margin: 0; background: var(--panel); border: 1px solid var(--rule); padding: 8px; }
   .grid img { display: block; width: 100%; height: auto; }
   .grid figcaption {
@@ -137,12 +146,18 @@
     font-style: normal;
   }
 
-  .video-slot {
+  .video-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
     background: var(--panel);
-    border: 1px dashed var(--rule);
-    padding: 48px 16px;
-    text-align: center;
-    color: var(--ink-dim);
+    border: 1px solid var(--rule);
+  }
+  .video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
   footer {
@@ -159,6 +174,7 @@
 <header class="hero">
   <img class="logo" src="assets/logo.png" alt="ALLFATHER logo">
   <p class="kicker">Press Kit</p>
+  <a class="wishlist" href="https://store.steampowered.com/app/4744230/ALLFATHER/"><img src="assets/wishlist-on-steam.png" alt="Wishlist ALLFATHER on Steam"></a>
 </header>
 
 <nav>
@@ -167,7 +183,6 @@
   <a href="#features">Features</a>
   <a href="#videos">Videos</a>
   <a href="#images">Images</a>
-  <a href="#logo">Logo &amp; Icon</a>
   <a href="#credits">Credits</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -180,23 +195,21 @@
     <div class="fact">
       <dl class="factsheet">
         <dt>Developer</dt>
-        <dd><span class="todo">TODO developer / studio name</span></dd>
+        <dd>Tommy McKay</dd>
         <dt>Based in</dt>
-        <dd><span class="todo">TODO location</span></dd>
+        <dd>Australia</dd>
         <dt>Release date</dt>
-        <dd><span class="todo">TODO (or "TBA")</span></dd>
+        <dd>Coming 2027</dd>
         <dt>Platforms</dt>
         <dd>PC (Steam, Windows)</dd>
-        <dt>Price</dt>
-        <dd><span class="todo">TODO (or "TBA")</span></dd>
         <dt>Engine</dt>
         <dd>Godot</dd>
         <dt>Steam page</dt>
-        <dd><span class="todo">TODO Steam URL</span></dd>
+        <dd><a href="https://store.steampowered.com/app/4744230/ALLFATHER/">store.steampowered.com/app/4744230/ALLFATHER</a></dd>
         <dt>Press contact</dt>
-        <dd><span class="todo">TODO press email</span></dd>
+        <dd><a href="mailto:tommymckaybne@gmail.com">tommymckaybne@gmail.com</a></dd>
         <dt>Social</dt>
-        <dd><span class="todo">TODO links (YouTube, Reddit, X, Discord)</span></dd>
+        <dd><a href="https://www.youtube.com/@tommythedev">YouTube</a> / <a href="https://discord.gg/HPbaMKY79J">Discord</a></dd>
       </dl>
     </div>
     <div class="desc" id="about">
@@ -211,8 +224,7 @@
       <p>The whole descent is rendered in a deliberately old-school low-poly style: dark, grainy, Norse.</p>
 
       <h3>History</h3>
-      <p class="note">Draft for rewrite.</p>
-      <p>ALLFATHER is developed by a solo developer <span class="todo">TODO name / prior releases if you want them public</span>. Development began in <span class="todo">TODO date</span> in Godot, with commissioned key art and a small circle of contract collaborators for 3D art, animation, and voice acting.</p>
+      <p>ALLFATHER is the solo project of Tommy McKay, an Australian developer who previously shipped Gnomes and Sea of Survivors on Steam. It is built in Godot, with commissioned key art and a small circle of contract collaborators for 3D art, animation, and voice acting.</p>
     </div>
   </div>
 </section>
@@ -233,8 +245,8 @@
 
 <section id="videos">
   <h2>Videos</h2>
-  <div class="video-slot">
-    <span class="todo">TODO: trailer embed goes here when the trailer is live (YouTube iframe).</span>
+  <div class="video-frame">
+    <iframe src="https://www.youtube-nocookie.com/embed/OOHqhjWDbV0" title="ALLFATHER trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
 </section>
 
@@ -242,41 +254,80 @@
   <h2>Images</h2>
   <p class="note">Right click any image and choose "Save image as" to download the full-resolution file.</p>
 
-  <h3>Key art</h3>
+  <h3>Logo &amp; icon</h3>
   <div class="grid">
-    <figure><img src="assets/key-art.png" alt="ALLFATHER key art"><figcaption>Key art</figcaption></figure>
-    <figure><img src="assets/capsule-main.png" alt="Main capsule art"><figcaption>Main capsule</figcaption></figure>
-    <figure><img src="assets/background-slide.png" alt="Slide background art"><figcaption>Background art</figcaption></figure>
-    <figure><img src="assets/background-slide-desaturated.png" alt="Slide background art, desaturated"><figcaption>Background art (desaturated)</figcaption></figure>
+    <figure><img loading="lazy" src="assets/logo.png" alt="ALLFATHER logo"><figcaption>Logo</figcaption></figure>
+    <figure><img loading="lazy" src="assets/app-icon.png" alt="ALLFATHER app icon"><figcaption>App icon</figcaption></figure>
+  </div>
+
+  <h3>YouTube thumbnails</h3>
+  <div class="grid">
+    <figure><img loading="lazy" src="assets/yt-thumbnail.png" alt="YouTube thumbnail with title"><figcaption>Thumbnail (with title)</figcaption></figure>
+    <figure><img loading="lazy" src="assets/yt-thumbnail-no-title.png" alt="YouTube thumbnail without title"><figcaption>Thumbnail (no title)</figcaption></figure>
+  </div>
+
+  <h3>Thumbnail characters (transparent)</h3>
+  <div class="grid small">
+    <figure><img loading="lazy" src="assets/cutout-shieldmaiden.png" alt="Shieldmaiden character cutout"><figcaption>The shieldmaiden</figcaption></figure>
+    <figure><img loading="lazy" src="assets/cutout-ice-giant.png" alt="Ice giant character cutout"><figcaption>Ice giant</figcaption></figure>
+    <figure><img loading="lazy" src="assets/cutout-skeletons.png" alt="Skeletons cutout"><figcaption>Skeletons</figcaption></figure>
+  </div>
+
+  <h3>Backgrounds</h3>
+  <div class="grid">
+    <figure><img loading="lazy" src="assets/background-slide.png" alt="Background art"><figcaption>Background</figcaption></figure>
+    <figure><img loading="lazy" src="assets/background-slide-desaturated.png" alt="Background art, desaturated"><figcaption>Background (desaturated)</figcaption></figure>
   </div>
 
   <h3>Screenshots</h3>
-  <p><span class="todo">TODO: screenshots and gameplay GIFs. The section that sells the game to press. Add a grid of 6 to 10 captures once a folder exists.</span></p>
-
-  <h3>Steam capsules</h3>
   <div class="grid">
-    <figure><img src="assets/capsule-header.png" alt="Steam header capsule"><figcaption>Header capsule</figcaption></figure>
-    <figure><img src="assets/capsule-vertical.png" alt="Vertical capsule"><figcaption>Vertical capsule</figcaption></figure>
-    <figure><img src="assets/capsule-vertical-border.png" alt="Vertical capsule with border"><figcaption>Vertical capsule (border)</figcaption></figure>
-    <figure><img src="assets/capsule-library.png" alt="Library capsule"><figcaption>Library capsule</figcaption></figure>
-    <figure><img src="assets/capsule-library-border.png" alt="Library capsule with border"><figcaption>Library capsule (border)</figcaption></figure>
-    <figure><img src="assets/capsule-library-hero.png" alt="Library hero capsule"><figcaption>Library hero</figcaption></figure>
-    <figure><img src="assets/capsule-small.png" alt="Small capsule"><figcaption>Small capsule</figcaption></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-blood-sacrifice.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-brokkrs-shop.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-chest-opening.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-dragon-breath.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-fire-dragon-emerge.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-forge-bow-and-quiver.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-forge-long-axe.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-freeze-skeletons.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-frost-giant-slam.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-hel-throne.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-ice-giant-fight.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-ice-wraith-duel.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-jotunheim-attack-draugr.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-killing-tentacles.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-kraken-charge.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-level-up.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-relic-tyrs-severed-arm.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-relic-tyrs-wolf-pelt.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-sindri-blacksmith.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-skeleton-swarm-ice-wraith.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-swamp-hags.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-tentacle.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-threads-of-fate.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-thunderwave-skeletons.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-trailer-lokis-dice.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-valkyries-trio.png" alt="ALLFATHER screenshot"></figure>
+    <figure><img loading="lazy" src="assets/screenshots/allfather-valkyries-trio2.png" alt="ALLFATHER screenshot"></figure>
   </div>
-</section>
 
-<section id="logo">
-  <h2>Logo &amp; Icon</h2>
+  <h3>Key art &amp; Steam capsules</h3>
   <div class="grid">
-    <figure><img src="assets/logo.png" alt="ALLFATHER logo"><figcaption>Logo</figcaption></figure>
-    <figure><img src="assets/app-icon.png" alt="ALLFATHER app icon"><figcaption>App icon</figcaption></figure>
+    <figure><img loading="lazy" src="assets/key-art.png" alt="ALLFATHER key art"><figcaption>Key art</figcaption></figure>
+    <figure><img loading="lazy" src="assets/capsule-main.png" alt="Main capsule art"><figcaption>Main capsule</figcaption></figure>
+    <figure><img loading="lazy" src="assets/capsule-header.png" alt="Steam header capsule"><figcaption>Header capsule</figcaption></figure>
+    <figure><img loading="lazy" src="assets/capsule-vertical.png" alt="Vertical capsule"><figcaption>Vertical capsule</figcaption></figure>
+    <figure><img loading="lazy" src="assets/capsule-vertical-border.png" alt="Vertical capsule with border"><figcaption>Vertical capsule (border)</figcaption></figure>
+    <figure><img loading="lazy" src="assets/capsule-library.png" alt="Library capsule"><figcaption>Library capsule</figcaption></figure>
+    <figure><img loading="lazy" src="assets/capsule-library-border.png" alt="Library capsule with border"><figcaption>Library capsule (border)</figcaption></figure>
+    <figure><img loading="lazy" src="assets/capsule-library-hero.png" alt="Library hero capsule"><figcaption>Library hero</figcaption></figure>
+    <figure><img loading="lazy" src="assets/capsule-small.png" alt="Small capsule"><figcaption>Small capsule</figcaption></figure>
   </div>
 </section>
 
 <section id="credits">
   <h2>Credits</h2>
   <dl class="factsheet">
-    <dt><span class="todo">TODO your public name</span></dt>
+    <dt>Tommy McKay</dt>
     <dd>Design, programming, everything else</dd>
     <dt>Anton Konrad (Arangemenk9000)</dt>
     <dd>Lead 3D Art Supplier and Consultant</dd>
@@ -284,7 +335,7 @@
     <dd>Voice Acting, The Shieldmaiden</dd>
     <dt>Muhammad Danish</dt>
     <dd>Character Animations</dd>
-    <dt><span class="todo">TODO capsule artist name</span></dt>
+    <dt>Giovanni Fim</dt>
     <dd>Key art and capsule illustration</dd>
   </dl>
 </section>
@@ -293,11 +344,13 @@
   <h2>Contact</h2>
   <dl class="factsheet">
     <dt>Press inquiries</dt>
-    <dd><span class="todo">TODO press email</span></dd>
+    <dd><a href="mailto:tommymckaybne@gmail.com">tommymckaybne@gmail.com</a></dd>
     <dt>Steam</dt>
-    <dd><span class="todo">TODO Steam page URL</span></dd>
-    <dt>Everything else</dt>
-    <dd><span class="todo">TODO socials / Discord</span></dd>
+    <dd><a href="https://store.steampowered.com/app/4744230/ALLFATHER/">ALLFATHER on Steam</a></dd>
+    <dt>YouTube</dt>
+    <dd><a href="https://www.youtube.com/@tommythedev">youtube.com/@tommythedev</a></dd>
+    <dt>Discord</dt>
+    <dd><a href="https://discord.gg/HPbaMKY79J">discord.gg/HPbaMKY79J</a></dd>
   </dl>
 </section>
 
