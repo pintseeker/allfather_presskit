@@ -29,30 +29,56 @@
   a:hover { color: #fff; }
 
   header.hero {
+    position: relative;
+    overflow: hidden;
     background: url('assets/background-slide.png') center / cover no-repeat, var(--bg);
     text-align: center;
-    padding: 72px 16px 56px;
+    padding: 56px 16px 48px;
     border-bottom: 2px solid var(--gold);
   }
+  header.hero video.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  header.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 2; }
   header.hero img.logo {
     max-width: min(560px, 90%);
     height: auto;
     filter: drop-shadow(0 6px 24px rgba(0,0,0,.8));
+    margin-bottom: -44px;
   }
-  header.hero p.kicker {
-    margin: 18px 0 0;
-    letter-spacing: .35em;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: var(--gold);
-  }
+  header.hero .wishlist { display: inline-block; }
   header.hero .wishlist img {
     max-width: 260px;
     height: auto;
-    margin-top: 26px;
     transition: transform .1s ease;
   }
   header.hero .wishlist img:hover { transform: scale(1.04); }
+  header.hero h1 {
+    margin: 30px 0 0;
+    font-size: 20px;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    text-shadow: 0 2px 8px rgba(0,0,0,.9);
+  }
+  header.hero p.hero-desc {
+    max-width: 720px;
+    margin: 12px auto 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,.9);
+  }
 
   nav {
     position: sticky;
@@ -163,9 +189,13 @@
 <body>
 
 <header class="hero">
-  <img class="logo" src="assets/logo.png" alt="ALLFATHER logo">
-  <p class="kicker">Press Kit</p>
-  <a class="wishlist" href="https://store.steampowered.com/app/4744230/ALLFATHER/"><img src="assets/wishlist-on-steam.png" alt="Wishlist ALLFATHER on Steam"></a>
+  <video class="hero-video" src="assets/hero-clip.mp4" autoplay muted loop playsinline></video>
+  <div class="hero-content">
+    <img class="logo" src="assets/logo.png" alt="ALLFATHER logo">
+    <div><a class="wishlist" href="https://store.steampowered.com/app/4744230/ALLFATHER/"><img src="assets/wishlist-on-steam.png" alt="Wishlist ALLFATHER on Steam"></a></div>
+    <h1>ALLFATHER: First Person, Roguelike, Dungeon Crawler</h1>
+    <p class="hero-desc">A brutal, first-person roguelike with precise, stamina-driven combat. Play as a fallen shieldmaiden who rejects the judgement of the Valkyries. Proving to the gods she deserves their favour, she uses their blessings to crawl from the depths of Helheim to the halls of Valhalla.</p>
+  </div>
 </header>
 
 <nav>
@@ -201,10 +231,9 @@
   <h2>Images</h2>
   <p class="note">Right click any image and choose "Save image as" to download the full-resolution file.</p>
 
-  <h3>Logo &amp; icon</h3>
+  <h3>Logo</h3>
   <div class="grid">
     <figure><img loading="lazy" src="assets/logo.png" alt="ALLFATHER logo"><figcaption>Logo</figcaption></figure>
-    <figure><img loading="lazy" src="assets/app-icon.png" alt="ALLFATHER app icon"><figcaption>App icon</figcaption></figure>
   </div>
 
   <h3>YouTube thumbnails</h3>
@@ -218,12 +247,6 @@
     <figure><img loading="lazy" src="assets/cutout-shieldmaiden.png" alt="Shieldmaiden character cutout"><figcaption>The shieldmaiden</figcaption></figure>
     <figure><img loading="lazy" src="assets/cutout-ice-giant.png" alt="Ice giant character cutout"><figcaption>Ice giant</figcaption></figure>
     <figure><img loading="lazy" src="assets/cutout-skeletons.png" alt="Skeletons cutout"><figcaption>Skeletons</figcaption></figure>
-  </div>
-
-  <h3>Backgrounds</h3>
-  <div class="grid">
-    <figure><img loading="lazy" src="assets/background-slide.png" alt="Background art"><figcaption>Background</figcaption></figure>
-    <figure><img loading="lazy" src="assets/background-slide-desaturated.png" alt="Background art, desaturated"><figcaption>Background (desaturated)</figcaption></figure>
   </div>
 
   <h3>Screenshots</h3>
@@ -257,7 +280,7 @@
     <figure><img loading="lazy" src="assets/screenshots/allfather-valkyries-trio2.png" alt="ALLFATHER screenshot"></figure>
   </div>
 
-  <h3>Key art &amp; Steam capsules</h3>
+  <h3>Key art</h3>
   <div class="grid">
     <figure><img loading="lazy" src="assets/key-art.png" alt="ALLFATHER key art"><figcaption>Key art</figcaption></figure>
     <figure><img loading="lazy" src="assets/capsule-main.png" alt="Main capsule art"><figcaption>Main capsule</figcaption></figure>
@@ -268,6 +291,9 @@
     <figure><img loading="lazy" src="assets/capsule-library-border.png" alt="Library capsule with border"><figcaption>Library capsule (border)</figcaption></figure>
     <figure><img loading="lazy" src="assets/capsule-library-hero.png" alt="Library hero capsule"><figcaption>Library hero</figcaption></figure>
     <figure><img loading="lazy" src="assets/capsule-small.png" alt="Small capsule"><figcaption>Small capsule</figcaption></figure>
+    <figure><img loading="lazy" src="assets/app-icon.png" alt="ALLFATHER app icon"><figcaption>App icon</figcaption></figure>
+    <figure><img loading="lazy" src="assets/background-slide.png" alt="Background art"><figcaption>Background</figcaption></figure>
+    <figure><img loading="lazy" src="assets/background-slide-desaturated.png" alt="Background art, desaturated"><figcaption>Background (desaturated)</figcaption></figure>
   </div>
 </section>
 
@@ -282,6 +308,8 @@
     <dd><a href="https://www.youtube.com/@tommythedev">youtube.com/@tommythedev</a></dd>
     <dt>Discord</dt>
     <dd><a href="https://discord.gg/HPbaMKY79J">discord.gg/HPbaMKY79J</a></dd>
+    <dt>Reddit</dt>
+    <dd><a href="https://www.reddit.com/r/AllfatherGame/">r/AllfatherGame</a></dd>
   </dl>
 </section>
 
