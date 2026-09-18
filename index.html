@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--
+  ALLFATHER press kit. Single static page, no build step.
+  Host: push this folder to a GitHub repo, enable Pages on the main branch root.
+
+  PLACEHOLDERS: everything wrapped in <span class="todo"> or marked TODO below
+  is unconfirmed and must be filled/rewritten by Tommy before the page goes live.
+  Drafted prose (long description, history, features) is a first pass from the
+  design docs and is expected to be rewritten.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALLFATHER Press Kit</title>
+<style>
+  :root {
+    --bg: #0e0b08;
+    --panel: #171209;
+    --ink: #d8cdb8;
+    --ink-dim: #9a8d74;
+    --gold: #c9a24b;
+    --gold-bright: #e8c877;
+    --rule: #3a2f1c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.65 Georgia, 'Times New Roman', serif;
+  }
+  a { color: var(--gold-bright); }
+  a:hover { color: #fff; }
+
+  header.hero {
+    background: url('assets/background-page.png') center / cover no-repeat, var(--bg);
+    text-align: center;
+    padding: 72px 16px 56px;
+    border-bottom: 2px solid var(--gold);
+  }
+  header.hero img.logo {
+    max-width: min(560px, 90%);
+    height: auto;
+    filter: drop-shadow(0 6px 24px rgba(0,0,0,.8));
+  }
+  header.hero p.kicker {
+    margin: 18px 0 0;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--gold);
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(14,11,8,.96);
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+    padding: 10px 8px;
+  }
+  nav a {
+    display: inline-block;
+    margin: 2px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: 13px;
+    color: var(--ink);
+  }
+  nav a:hover { color: var(--gold-bright); }
+
+  main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 20px 80px;
+  }
+  section { padding: 44px 0 8px; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-size: 26px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    margin: 0 0 20px;
+  }
+  h3 {
+    font-size: 17px;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    margin: 34px 0 12px;
+  }
+
+  .cols { display: flex; gap: 48px; flex-wrap: wrap; }
+  .cols > .fact { flex: 1 1 260px; }
+  .cols > .desc { flex: 2 1 400px; }
+
+  dl.factsheet { margin: 0; }
+  dl.factsheet dt {
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: .14em;
+    margin-top: 14px;
+  }
+  dl.factsheet dd { margin: 2px 0 0; }
+
+  ul.features { padding-left: 22px; }
+  ul.features li { margin: 10px 0; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    margin: 8px 0 24px;
+  }
+  .grid figure { margin: 0; background: var(--panel); border: 1px solid var(--rule); padding: 8px; }
+  .grid img { display: block; width: 100%; height: auto; }
+  .grid figcaption {
+    font-size: 12px;
+    color: var(--ink-dim);
+    padding-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+
+  .note { color: var(--ink-dim); font-size: 15px; font-style: italic; }
+
+  .todo {
+    background: #4a3a10;
+    color: #ffd97a;
+    padding: 0 6px;
+    border-radius: 3px;
+    font-style: normal;
+  }
+
+  .video-slot {
+    background: var(--panel);
+    border: 1px dashed var(--rule);
+    padding: 48px 16px;
+    text-align: center;
+    color: var(--ink-dim);
+  }
+
+  footer {
+    text-align: center;
+    color: var(--ink-dim);
+    font-size: 13px;
+    padding: 28px 16px 48px;
+    border-top: 2px solid var(--gold);
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="logo" src="assets/logo.png" alt="ALLFATHER logo">
+  <p class="kicker">Press Kit</p>
+</header>
+
+<nav>
+  <a href="#factsheet">Factsheet</a>
+  <a href="#about">About</a>
+  <a href="#features">Features</a>
+  <a href="#videos">Videos</a>
+  <a href="#images">Images</a>
+  <a href="#logo">Logo &amp; Icon</a>
+  <a href="#credits">Credits</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+<section id="factsheet">
+  <h2>Factsheet</h2>
+  <div class="cols">
+    <div class="fact">
+      <dl class="factsheet">
+        <dt>Developer</dt>
+        <dd><span class="todo">TODO developer / studio name</span></dd>
+        <dt>Based in</dt>
+        <dd><span class="todo">TODO location</span></dd>
+        <dt>Release date</dt>
+        <dd><span class="todo">TODO (or "TBA")</span></dd>
+        <dt>Platforms</dt>
+        <dd>PC (Steam, Windows)</dd>
+        <dt>Price</dt>
+        <dd><span class="todo">TODO (or "TBA")</span></dd>
+        <dt>Engine</dt>
+        <dd>Godot</dd>
+        <dt>Steam page</dt>
+        <dd><span class="todo">TODO Steam URL</span></dd>
+        <dt>Press contact</dt>
+        <dd><span class="todo">TODO press email</span></dd>
+        <dt>Social</dt>
+        <dd><span class="todo">TODO links (YouTube, Reddit, X, Discord)</span></dd>
+      </dl>
+    </div>
+    <div class="desc" id="about">
+      <h2>About</h2>
+      <p>A brutal, first-person roguelike with precise, stamina-driven combat. Play as a fallen shieldmaiden who rejects the judgement of the Valkyries. Prove to the gods you deserve their favour and use their blessings to crawl from the depths of Helheim to the halls of Valhalla.</p>
+
+      <h3>Long description</h3>
+      <p class="note">Draft for rewrite. Assembled from the design docs, not final press copy.</p>
+      <p>You were a shieldmaiden. You died well. The Valkyries sent you to Hel anyway. ALLFATHER is a first-person roguelike about refusing that judgement: fight your way up from the realm of the dead, through regions sealed behind their keepers, to the gates of Valhalla.</p>
+      <p>Combat runs in real time and rewards precision. Manage stamina, read attacks, block at the last moment to turn a hit into an opening, and choose weapons that change how you fight, from sword and shield to bow to a pair of axes. Enemies fight for position around you, and every room is a fight you cannot back out of: doors seal behind you, and the only way out is forward.</p>
+      <p>The gods are watching, and most of them are not on Odin's side. Level up and choose blessings from the Norse pantheon, spend gold at the dwarf Brokkr's forge for relics, and shape a different build every run. Death is permanent, but Hel's domain remembers you: unlock runes and weapons between runs and walk back in stronger.</p>
+      <p>The whole descent is rendered in a deliberately old-school low-poly style: dark, grainy, Norse.</p>
+
+      <h3>History</h3>
+      <p class="note">Draft for rewrite.</p>
+      <p>ALLFATHER is developed by a solo developer <span class="todo">TODO name / prior releases if you want them public</span>. Development began in <span class="todo">TODO date</span> in Godot, with commissioned key art and a small circle of contract collaborators for 3D art, animation, and voice acting.</p>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <h2>Features</h2>
+  <p class="note">Draft for rewrite. Counts deliberately left out where content is still growing.</p>
+  <ul class="features">
+    <li>Real-time first-person combat built on stamina, spacing, and timing. Perfectly timed blocks turn an enemy's attack into your opening.</li>
+    <li>Distinct weapons with their own movesets: sword and shield, dual axes, the longaxe, and the bow.</li>
+    <li>A one-way road through Helheim. Doors lock behind you, bosses seal each region, and portal choices decide which rewards you fight for.</li>
+    <li>Blessings from the Norse gods, offered as you level: each god pushes a different way to fight.</li>
+    <li>Gold to earn and spend at Brokkr's shop for relics that bend the rules of a run.</li>
+    <li>Permadeath with a persistent home in Hel's domain: a rune tree, weapon unlocks, and characters who remember you.</li>
+    <li>A dark Norse world in a deliberate PSX-era visual style.</li>
+  </ul>
+</section>
+
+<section id="videos">
+  <h2>Videos</h2>
+  <div class="video-slot">
+    <span class="todo">TODO: trailer embed goes here when the trailer is live (YouTube iframe).</span>
+  </div>
+</section>
+
+<section id="images">
+  <h2>Images</h2>
+  <p class="note">Right click any image and choose "Save image as" to download the full-resolution file.</p>
+
+  <h3>Key art</h3>
+  <div class="grid">
+    <figure><img src="assets/key-art.png" alt="ALLFATHER key art"><figcaption>Key art</figcaption></figure>
+    <figure><img src="assets/capsule-main.png" alt="Main capsule art"><figcaption>Main capsule</figcaption></figure>
+    <figure><img src="assets/background-slide.png" alt="Slide background art"><figcaption>Background art</figcaption></figure>
+    <figure><img src="assets/background-slide-desaturated.png" alt="Slide background art, desaturated"><figcaption>Background art (desaturated)</figcaption></figure>
+  </div>
+
+  <h3>Screenshots</h3>
+  <p><span class="todo">TODO: screenshots and gameplay GIFs. The section that sells the game to press. Add a grid of 6 to 10 captures once a folder exists.</span></p>
+
+  <h3>Steam capsules</h3>
+  <div class="grid">
+    <figure><img src="assets/capsule-header.png" alt="Steam header capsule"><figcaption>Header capsule</figcaption></figure>
+    <figure><img src="assets/capsule-vertical.png" alt="Vertical capsule"><figcaption>Vertical capsule</figcaption></figure>
+    <figure><img src="assets/capsule-vertical-border.png" alt="Vertical capsule with border"><figcaption>Vertical capsule (border)</figcaption></figure>
+    <figure><img src="assets/capsule-library.png" alt="Library capsule"><figcaption>Library capsule</figcaption></figure>
+    <figure><img src="assets/capsule-library-border.png" alt="Library capsule with border"><figcaption>Library capsule (border)</figcaption></figure>
+    <figure><img src="assets/capsule-library-hero.png" alt="Library hero capsule"><figcaption>Library hero</figcaption></figure>
+    <figure><img src="assets/capsule-small.png" alt="Small capsule"><figcaption>Small capsule</figcaption></figure>
+  </div>
+</section>
+
+<section id="logo">
+  <h2>Logo &amp; Icon</h2>
+  <div class="grid">
+    <figure><img src="assets/logo.png" alt="ALLFATHER logo"><figcaption>Logo</figcaption></figure>
+    <figure><img src="assets/app-icon.png" alt="ALLFATHER app icon"><figcaption>App icon</figcaption></figure>
+  </div>
+</section>
+
+<section id="credits">
+  <h2>Credits</h2>
+  <dl class="factsheet">
+    <dt><span class="todo">TODO your public name</span></dt>
+    <dd>Design, programming, everything else</dd>
+    <dt>Anton Konrad (Arangemenk9000)</dt>
+    <dd>Lead 3D Art Supplier and Consultant</dd>
+    <dt>Max Ponsness</dt>
+    <dd>Voice Acting, The Shieldmaiden</dd>
+    <dt>Muhammad Danish</dt>
+    <dd>Character Animations</dd>
+    <dt><span class="todo">TODO capsule artist name</span></dt>
+    <dd>Key art and capsule illustration</dd>
+  </dl>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <dl class="factsheet">
+    <dt>Press inquiries</dt>
+    <dd><span class="todo">TODO press email</span></dd>
+    <dt>Steam</dt>
+    <dd><span class="todo">TODO Steam page URL</span></dd>
+    <dt>Everything else</dt>
+    <dd><span class="todo">TODO socials / Discord</span></dd>
+  </dl>
+</section>
+
+</main>
+
+<footer>
+  ALLFATHER press kit. All images on this page may be used for coverage of the game.
+</footer>
+
+</body>
+</html>
