@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  ALLFATHER press kit. Single static page, no build step.
+  ALLFATHER marketing page. Single static page, no build step; press kit is press.html.
   Hosted on GitHub Pages: commit + push to deploy.
 -->
 <html lang="en">
@@ -148,39 +148,11 @@
     letter-spacing: .18em;
     margin: 0 0 20px;
   }
-  h3 {
-    font-size: 17px;
-    color: var(--gold-bright);
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    margin: 34px 0 12px;
-  }
-
   .platform-row.left { justify-content: flex-start; }
   .platform-row .as-is { text-transform: none; }
 
   ul.features { padding-left: 22px; }
   ul.features li { margin: 10px 0; }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 14px;
-    margin: 8px 0 24px;
-  }
-  .grid.small { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-  .grid.small img { max-height: 320px; object-fit: contain; }
-  .grid figure { margin: 0; }
-  .grid img { display: block; width: 100%; height: auto; }
-  .grid figcaption {
-    font-size: 12px;
-    color: var(--ink-dim);
-    padding-top: 6px;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-  }
-
-  .note { color: var(--ink-dim); font-size: 15px; font-style: italic; }
 
   .newsletter-form {
     display: flex;
@@ -261,24 +233,14 @@
 </header>
 
 <nav>
-  <a href="#playtest">Playtest</a>
   <a href="#trailer">Trailer</a>
   <a href="#features">Features</a>
-  <a href="#press-kit">Press Kit</a>
+  <a href="#playtest">Playtest</a>
+  <a href="press.html">Press Kit</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <main>
-
-<section id="playtest">
-  <h2>Join the Playtest</h2>
-  <p>Sign up to get FREE access to upcoming playtests. Newsletter members get invited to every ALLFATHER playtest and to playtests for future games, along with development news. You can unsubscribe at any time.</p>
-  <form class="newsletter-form" action="https://app.kit.com/forms/9937287/subscriptions" method="post">
-    <input type="email" name="email_address" required placeholder="Email address" aria-label="Email address" autocomplete="email">
-    <button type="submit">Sign up</button>
-  </form>
-  <p class="newsletter-status" hidden></p>
-</section>
 
 <section id="trailer">
   <h2>Trailer</h2>
@@ -300,74 +262,14 @@
   </ul>
 </section>
 
-<section id="press-kit">
-  <h2>Press Kit</h2>
-  <p class="note">Right click any image and choose "Save image as" to download the full-resolution file.</p>
-
-  <h3>Logo</h3>
-  <div class="grid">
-    <figure><img loading="lazy" src="assets/logo.png" alt="ALLFATHER logo"><figcaption>Logo</figcaption></figure>
-  </div>
-
-  <h3>YouTube thumbnails</h3>
-  <div class="grid">
-    <figure><img loading="lazy" src="assets/yt-thumbnail.png" alt="YouTube thumbnail with title"><figcaption>Thumbnail (with title)</figcaption></figure>
-    <figure><img loading="lazy" src="assets/yt-thumbnail-no-title.png" alt="YouTube thumbnail without title"><figcaption>Thumbnail (no title)</figcaption></figure>
-  </div>
-
-  <h3>Thumbnail characters (transparent)</h3>
-  <div class="grid small">
-    <figure><img loading="lazy" src="assets/cutout-shieldmaiden.png" alt="Shieldmaiden character cutout"><figcaption>The shieldmaiden</figcaption></figure>
-    <figure><img loading="lazy" src="assets/cutout-ice-giant.png" alt="Ice giant character cutout"><figcaption>Ice giant</figcaption></figure>
-    <figure><img loading="lazy" src="assets/cutout-skeletons.png" alt="Skeletons cutout"><figcaption>Skeletons</figcaption></figure>
-  </div>
-
-  <h3>Screenshots</h3>
-  <div class="grid">
-    <figure><img loading="lazy" src="assets/screenshots/allfather-blood-sacrifice.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-brokkrs-shop.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-chest-opening.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-dragon-breath.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-fire-dragon-emerge.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-forge-bow-and-quiver.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-forge-long-axe.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-freeze-skeletons.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-frost-giant-slam.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-hel-throne.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-ice-giant-fight.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-ice-wraith-duel.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-jotunheim-attack-draugr.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-killing-tentacles.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-kraken-charge.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-level-up.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-relic-tyrs-severed-arm.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-relic-tyrs-wolf-pelt.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-sindri-blacksmith.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-skeleton-swarm-ice-wraith.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-swamp-hags.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-tentacle.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-threads-of-fate.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-thunderwave-skeletons.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-trailer-lokis-dice.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-valkyries-trio.png" alt="ALLFATHER screenshot"></figure>
-    <figure><img loading="lazy" src="assets/screenshots/allfather-valkyries-trio2.png" alt="ALLFATHER screenshot"></figure>
-  </div>
-
-  <h3>Key art</h3>
-  <div class="grid">
-    <figure><img loading="lazy" src="assets/key-art.png" alt="ALLFATHER key art"><figcaption>Key art</figcaption></figure>
-    <figure><img loading="lazy" src="assets/capsule-main.png" alt="Main capsule art"><figcaption>Main capsule</figcaption></figure>
-    <figure><img loading="lazy" src="assets/capsule-header.png" alt="Steam header capsule"><figcaption>Header capsule</figcaption></figure>
-    <figure><img loading="lazy" src="assets/capsule-vertical.png" alt="Vertical capsule"><figcaption>Vertical capsule</figcaption></figure>
-    <figure><img loading="lazy" src="assets/capsule-vertical-border.png" alt="Vertical capsule with border"><figcaption>Vertical capsule (border)</figcaption></figure>
-    <figure><img loading="lazy" src="assets/capsule-library.png" alt="Library capsule"><figcaption>Library capsule</figcaption></figure>
-    <figure><img loading="lazy" src="assets/capsule-library-border.png" alt="Library capsule with border"><figcaption>Library capsule (border)</figcaption></figure>
-    <figure><img loading="lazy" src="assets/capsule-library-hero.png" alt="Library hero capsule"><figcaption>Library hero</figcaption></figure>
-    <figure><img loading="lazy" src="assets/capsule-small.png" alt="Small capsule"><figcaption>Small capsule</figcaption></figure>
-    <figure><img loading="lazy" src="assets/app-icon.png" alt="ALLFATHER app icon"><figcaption>App icon</figcaption></figure>
-    <figure><img loading="lazy" src="assets/background-slide.png" alt="Background art"><figcaption>Background</figcaption></figure>
-    <figure><img loading="lazy" src="assets/background-slide-desaturated.png" alt="Background art, desaturated"><figcaption>Background (desaturated)</figcaption></figure>
-  </div>
+<section id="playtest">
+  <h2>Join the Playtest</h2>
+  <p>Sign up to get FREE access to upcoming playtests. Newsletter members get invited to every ALLFATHER playtest and to playtests for future games, along with development news. You can unsubscribe at any time.</p>
+  <form class="newsletter-form" action="https://app.kit.com/forms/9937287/subscriptions" method="post">
+    <input type="email" name="email_address" required placeholder="Email address" aria-label="Email address" autocomplete="email">
+    <button type="submit">Sign up</button>
+  </form>
+  <p class="newsletter-status" hidden></p>
 </section>
 
 <section id="contact">
@@ -385,7 +287,7 @@
 </main>
 
 <footer>
-  All images on this page may be used for coverage of the game. Press: <a href="press.html">press kit</a>.
+  ALLFATHER · <a href="press.html">Press Kit</a>
 </footer>
 
 <script>
