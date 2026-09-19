@@ -134,8 +134,8 @@
   }
 
   .cols { display: flex; gap: 48px; flex-wrap: wrap; }
-  .cols > .fact { flex: 1 1 320px; }
-  .cols > .desc { flex: 1 1 320px; }
+  .cols > .fact { flex: 1 1 260px; }
+  .cols > .desc { flex: 2 1 400px; }
   .cols h2 { clear: both; margin-top: 44px; }
   .cols h2:first-child { margin-top: 0; }
   .cols h2 + p { margin-top: 0; }
@@ -143,8 +143,8 @@
   #developer::after { content: ""; display: block; clear: both; }
   .headshot {
     float: left;
-    width: 110px;
-    height: 110px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     object-fit: cover;
     margin: 4px 20px 10px 0;
@@ -290,20 +290,22 @@
 
 <main>
 
+<section id="trailer">
+  <h2>Trailer</h2>
+  <div class="video-frame">
+    <iframe src="https://www.youtube-nocookie.com/embed/OOHqhjWDbV0" title="ALLFATHER trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</section>
+
 <section id="developer">
   <h2>From the Developer</h2>
   <img class="headshot" src="assets/headshot.jpg" alt="Tommy McKay">
-  <p>ALLFATHER is my first solo project and my first 3D game. After shipping Gnomes and Sea of Survivors, I wanted to build something that shows the full range of what I can do, from the combat design to the soundtrack, which I am composing myself.</p>
-  <p>Every exchange in ALLFATHER is brutal but fair. There are no cheap deaths. Combat rewards awareness and patience over panic and button mashing.</p>
+  <p>ALLFATHER is my first solo project and my first 3D game. After shipping Gnomes and Sea of Survivors, I wanted to build something that shows the full range of what I can do, from the combat design to the soundtrack, which I am composing myself. Every exchange in ALLFATHER is brutal but fair. There are no cheap deaths. Combat rewards awareness and patience over panic and button mashing.</p>
 </section>
 
 <section id="factsheet">
   <div class="cols">
     <div class="fact">
-      <h2 id="trailer">Trailer</h2>
-      <div class="video-frame">
-        <iframe src="https://www.youtube-nocookie.com/embed/OOHqhjWDbV0" title="ALLFATHER trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
       <h2>Factsheet</h2>
       <dl class="factsheet">
         <dt>Developer</dt>
