@@ -16,12 +16,10 @@
 <style>
   :root {
     --bg: #0e0b08;
-    --panel: #171209;
     --ink: #d8cdb8;
     --ink-dim: #9a8d74;
     --gold: #c9a24b;
     --gold-bright: #e8c877;
-    --rule: #3a2f1c;
   }
   * { box-sizing: border-box; }
   body {
@@ -39,7 +37,6 @@
     background: url('assets/background-slide.png') center / cover no-repeat, var(--bg);
     text-align: center;
     padding: 56px 16px 48px;
-    border-bottom: 2px solid var(--gold);
   }
   header.hero video.hero-video {
     position: absolute;
@@ -96,19 +93,15 @@
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    padding: 9px 24px;
-    border: 1px solid var(--gold);
-    background: rgba(0,0,0,.55);
+    padding: 6px 10px;
     color: var(--gold-bright);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: .12em;
     font-size: 14px;
+    text-shadow: 0 2px 8px rgba(0,0,0,.9);
   }
-  .platform-row a:hover {
-    background: var(--gold);
-    color: #14100a;
-  }
+  .platform-row a:hover { color: #fff; }
   .platform-row svg {
     width: 15px;
     height: 15px;
@@ -121,7 +114,6 @@
     top: 0;
     z-index: 10;
     background: rgba(14,11,8,.96);
-    border-bottom: 1px solid var(--rule);
     text-align: center;
     padding: 10px 8px;
   }
@@ -141,8 +133,7 @@
     margin: 0 auto;
     padding: 24px 20px 80px;
   }
-  section { padding: 44px 0 8px; border-bottom: 1px solid var(--rule); }
-  section:last-of-type { border-bottom: none; }
+  section { padding: 52px 0 8px; }
   h2 {
     font-size: 26px;
     color: var(--gold);
@@ -179,7 +170,7 @@
   }
   .grid.small { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   .grid.small img { max-height: 320px; object-fit: contain; }
-  .grid figure { margin: 0; background: var(--panel); border: 1px solid var(--rule); padding: 8px; }
+  .grid figure { margin: 0; }
   .grid img { display: block; width: 100%; height: auto; }
   .grid figcaption {
     font-size: 12px;
@@ -203,8 +194,6 @@
     position: relative;
     aspect-ratio: 16 / 9;
     max-width: 100%;
-    background: var(--panel);
-    border: 1px solid var(--rule);
   }
   .video-frame iframe {
     position: absolute;
@@ -218,7 +207,6 @@
     color: var(--ink-dim);
     font-size: 13px;
     padding: 28px 16px 48px;
-    border-top: 2px solid var(--gold);
   }
 </style>
 </head>
