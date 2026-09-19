@@ -160,13 +160,13 @@
   dl.factsheet { margin: 0; }
   dl.factsheet-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px 24px;
     text-align: center;
   }
   dl.factsheet-grid dt { margin-top: 0; }
   @media (max-width: 900px) {
-    dl.factsheet-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    dl.factsheet-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   dl.factsheet dt {
     color: var(--gold);
@@ -331,7 +331,6 @@
 <section class="factsheet-band">
   <dl class="factsheet factsheet-grid" id="factsheet">
     <div><dt>Developer</dt><dd>Tommy McKay</dd></div>
-    <div><dt>Based in</dt><dd>Australia</dd></div>
     <div><dt>Release date</dt><dd>Coming 2027</dd></div>
     <div><dt>Platforms</dt><dd>PC (Steam, Windows)</dd></div>
     <div><dt>Engine</dt><dd>Godot</dd></div>
