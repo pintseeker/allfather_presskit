@@ -91,6 +91,17 @@
     color: var(--ink);
   }
   nav a:hover { color: var(--gold-bright); }
+  nav a.switch {
+    border: 1px solid var(--gold);
+    background: rgba(0,0,0,.55);
+    color: var(--gold-bright);
+    padding: 5px 16px;
+    margin-left: 14px;
+  }
+  nav a.switch:hover {
+    background: var(--gold);
+    color: #14100a;
+  }
 
   main {
     max-width: 1080px;
@@ -241,7 +252,7 @@
 <header class="press">
   <video class="hero-video" src="assets/hero-clip.mp4" autoplay muted loop playsinline></video>
   <div class="press-content">
-    <a href="index.html"><img class="logo" src="assets/logo.png" alt="ALLFATHER logo"></a>
+    <a href="/"><img class="logo" src="assets/logo.png" alt="ALLFATHER logo"></a>
     <h1>Press Kit</h1>
   </div>
 </header>
@@ -253,7 +264,7 @@
   <a href="#images">Images</a>
   <a href="#credits">Credits</a>
   <a href="#contact">Contact</a>
-  <a href="index.html">Main Site</a>
+  <a class="switch" href="/">Main Site</a>
 </nav>
 
 <main>

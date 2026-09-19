@@ -134,6 +134,17 @@
     color: var(--ink);
   }
   nav a:hover { color: var(--gold-bright); }
+  nav a.switch {
+    border: 1px solid var(--gold);
+    background: rgba(0,0,0,.55);
+    color: var(--gold-bright);
+    padding: 5px 16px;
+    margin-left: 14px;
+  }
+  nav a.switch:hover {
+    background: var(--gold);
+    color: #14100a;
+  }
 
   main {
     max-width: 1080px;
@@ -246,8 +257,8 @@
   <a href="#trailer">Trailer</a>
   <a href="#features">Features</a>
   <a href="#playtest">Playtest</a>
-  <a href="press.html">Press Kit</a>
   <a href="#contact">Contact</a>
+  <a class="switch" href="/press">Press Kit</a>
 </nav>
 
 <main>
@@ -300,7 +311,7 @@
 </main>
 
 <footer>
-  ALLFATHER · <a href="press.html">Press Kit</a>
+  ALLFATHER · <a href="/press">Press Kit</a>
 </footer>
 
 <script>
