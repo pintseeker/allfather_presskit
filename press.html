@@ -148,11 +148,11 @@
   #about h2 + p { margin-top: 0; }
   .headshot + p { margin-top: 0; }
   #developer::after { content: ""; display: block; clear: both; }
-  #developer .factsheet-grid { clear: both; padding-top: 30px; }
+  .factsheet-band { padding: 40px 0 0; }
   .headshot {
     float: left;
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     margin: 4px 20px 10px 0;
@@ -183,6 +183,7 @@
     max-width: 900px;
   }
   dl.credits dt { margin-top: 0; }
+  dl.credits dd { font-size: 20px; }
   dl.credits { text-align: center; }
   dl.credits-lead {
     text-align: center;
@@ -191,13 +192,26 @@
   }
   dl.credits-lead dt {
     margin-top: 0;
-    font-size: 24px;
+    font-size: 15px;
+  }
+  dl.credits-lead dd {
+    font-size: 28px;
     font-weight: 700;
   }
   @media (max-width: 560px) {
     dl.credits, dl.factsheet-grid { grid-template-columns: 1fr; }
   }
 
+  ul.features { padding-left: 22px; }
+  ul.features li { margin: 10px 0; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    margin: 8px 0 24px;
+    justify-content: center;
+  }
   .grid.small { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   .grid.small img { max-height: 320px; object-fit: contain; }
   .grid figure { margin: 0; }
@@ -306,17 +320,20 @@
 
 <main>
 
-<section id="developer">
-  <h2>From the Developer</h2>
-  <img class="headshot" src="assets/headshot.jpg" alt="Tommy McKay">
-  <p>ALLFATHER is my first solo project and my first 3D game. After shipping Gnomes and Sea of Survivors, I wanted to build something that shows the full range of what I can do, from novel combat design to a soundtrack I'm composing myself. Every exchange in ALLFATHER is brutal but fair. There are no cheap deaths. Combat rewards awareness and patience over panic and button mashing.</p>
+<section class="factsheet-band">
   <dl class="factsheet factsheet-grid" id="factsheet">
-    <div><dt>Developer and Publisher</dt><dd>Tommy McKay</dd></div>
+    <div><dt>Developer</dt><dd>Tommy McKay</dd></div>
     <div><dt>Based in</dt><dd>Australia</dd></div>
     <div><dt>Release date</dt><dd>Coming 2027</dd></div>
     <div><dt>Platforms</dt><dd>PC (Steam, Windows)</dd></div>
     <div><dt>Engine</dt><dd>Godot</dd></div>
   </dl>
+</section>
+
+<section id="developer">
+  <h2>From the Developer</h2>
+  <img class="headshot" src="assets/headshot.jpg" alt="Tommy McKay">
+  <p>ALLFATHER is my first solo project and my first 3D game. After shipping Gnomes and Sea of Survivors, I wanted to build something that shows the full range of what I can do, from novel combat design to a soundtrack I'm composing myself. Every exchange in ALLFATHER is brutal but fair. There are no cheap deaths. Combat rewards awareness and patience over panic and button mashing.</p>
 </section>
 
 <section id="trailer">
@@ -354,6 +371,7 @@
 <section id="images">
   <h2>Images</h2>
   <p class="note">Right click any image and choose "Save image as" to download the full-resolution file.</p>
+  <p><a href="assets/allfather-key-art-psd.zip" download>Download key art PSD</a> <span class="note">(67 MB zip)</span></p>
 
   <h3>Logo</h3>
   <div class="grid">
@@ -424,17 +442,17 @@
 <section id="credits">
   <h2>Credits</h2>
   <dl class="factsheet credits-lead">
-    <div><dt>Tommy McKay</dt><dd>Creator and Solo Developer</dd></div>
+    <div><dt>Creator and Solo Developer</dt><dd>Tommy McKay</dd></div>
   </dl>
   <dl class="factsheet credits">
-    <div><dt>Anton Konrad (Arrangemonk9000)</dt><dd>3D Art Consultant and Asset Supplier</dd></div>
-    <div><dt>Onurhan Tunar (Revolving Pizza Games)</dt><dd>Environment Art</dd></div>
-    <div><dt>Muhammad Danish (YUKIDAN)</dt><dd>Character Animations</dd></div>
-    <div><dt>Giovianni Fim</dt><dd>Key Art and Illustration</dd></div>
-    <div><dt>Max Ponsness</dt><dd>Voice Acting, The Shieldmaiden</dd></div>
-    <div><dt>Jay Topping</dt><dd>Trailer Consultant</dd></div>
-    <div><dt>Mike Forest</dt><dd>Graphic Design and UI Consultant</dd></div>
-    <div><dt>Sean Dee (Towerpoint Games)</dt><dd>Funding Documentation Consultant</dd></div>
+    <div><dt>3D Art Consultant and Asset Supplier</dt><dd>Anton Konrad (Arrangemonk9000)</dd></div>
+    <div><dt>Environment Art</dt><dd>Onurhan Tunar (Revolving Pizza Games)</dd></div>
+    <div><dt>Character Animations</dt><dd>Muhammad Danish (yukidan)</dd></div>
+    <div><dt>Key Art and Illustration</dt><dd>Giovianni Fim</dd></div>
+    <div><dt>Voice Acting, The Shieldmaiden</dt><dd>Max Ponsness</dd></div>
+    <div><dt>Trailer Consultant</dt><dd>Jay Topping</dd></div>
+    <div><dt>Graphic Design and UI Consultant</dt><dd>Mike Forest</dd></div>
+    <div><dt>Funding Documentation Consultant</dt><dd>Sean Dee (Towerpoint Games)</dd></div>
   </dl>
 </section>
 
