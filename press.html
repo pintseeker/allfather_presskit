@@ -94,8 +94,9 @@
   .cols { display: flex; gap: 48px; flex-wrap: wrap; }
   .cols > .fact { flex: 1 1 260px; }
   .cols > .desc { flex: 2 1 400px; }
-  .cols > .desc h2 { margin-top: 0; }
+  .cols .desc h2 + p { margin-top: 0; }
   dl.factsheet { margin: 0; }
+  dl.factsheet > dt:first-of-type { margin-top: 0; }
   dl.factsheet dt {
     color: var(--gold);
     text-transform: uppercase;
@@ -104,6 +105,16 @@
     margin-top: 14px;
   }
   dl.factsheet dd { margin: 2px 0 0; }
+  dl.credits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 48px;
+    max-width: 900px;
+  }
+  dl.credits dt { margin-top: 0; }
+  @media (max-width: 560px) {
+    dl.credits { grid-template-columns: 1fr; }
+  }
 
   .platform-row {
     display: flex;
@@ -201,9 +212,9 @@
 <main>
 
 <section id="factsheet">
-  <h2>Factsheet</h2>
   <div class="cols">
     <div class="fact">
+      <h2>Factsheet</h2>
       <dl class="factsheet">
         <dt>Developer</dt>
         <dd>Tommy McKay</dd>
@@ -235,8 +246,9 @@
       <p>The gods are watching, and most of them are not on Odin's side. Level up and choose blessings from the Norse pantheon, spend gold at the dwarf Brokkr's forge for relics, and shape a different build every run. Death is permanent, but Hel's domain remembers you: unlock runes and weapons between runs and walk back in stronger.</p>
       <p>The whole descent is rendered in a deliberately old-school low-poly style: dark, grainy, Norse.</p>
 
-      <h3>History</h3>
-      <p>ALLFATHER is the solo project of Tommy McKay, an Australian developer who previously shipped Gnomes and Sea of Survivors on Steam. It is built in Godot, with commissioned key art and a small circle of contract collaborators for 3D art, animation, and voice acting.</p>
+      <h3>From the developer</h3>
+      <p>ALLFATHER is my first solo project and my first 3D game. After shipping Gnomes and Sea of Survivors, I wanted to build something that shows the full range of what I can do, from the combat design to the soundtrack, which I am composing myself.</p>
+      <p>Every exchange in ALLFATHER is brutal but fair. There are no cheap deaths. Combat rewards awareness and patience over panic and button mashing.</p>
     </div>
   </div>
 </section>
@@ -251,6 +263,7 @@
     <li>Gold to earn and spend at Brokkr's shop for relics that bend the rules of a run.</li>
     <li>Permadeath with a persistent home in Hel's domain: a rune tree, weapon unlocks, and characters who remember you.</li>
     <li>A dark Norse world in a deliberate PSX-era visual style.</li>
+    <li>An original soundtrack composed by the developer.</li>
   </ul>
 </section>
 
@@ -333,17 +346,16 @@
 
 <section id="credits">
   <h2>Credits</h2>
-  <dl class="factsheet">
-    <dt>Tommy McKay</dt>
-    <dd>Design, programming, everything else</dd>
-    <dt>Anton Konrad (Arangemenk9000)</dt>
-    <dd>Lead 3D Art Supplier and Consultant</dd>
-    <dt>Max Ponsness</dt>
-    <dd>Voice Acting, The Shieldmaiden</dd>
-    <dt>Muhammad Danish</dt>
-    <dd>Character Animations</dd>
-    <dt>Giovanni Fim</dt>
-    <dd>Key art and capsule illustration</dd>
+  <dl class="factsheet credits">
+    <div><dt>Tommy McKay</dt><dd>Creator and Solo Developer</dd></div>
+    <div><dt>Anton Konrad (Arrangemonk9000)</dt><dd>3D Art Supplier and Consultant</dd></div>
+    <div><dt>Onurhan Tunar (Revolving Pizza Games)</dt><dd>Environment Art</dd></div>
+    <div><dt>Muhammad Danish</dt><dd>Character Animations</dd></div>
+    <div><dt>Max Ponsness</dt><dd>Voice Acting, The Shieldmaiden</dd></div>
+    <div><dt>Jay Topping (WeForge)</dt><dd>Trailer and PR Consultant</dd></div>
+    <div><dt>Giovanni Fim</dt><dd>Key Art and Illustration</dd></div>
+    <div><dt>Mike Forest</dt><dd>Graphic Design and UI Consultant</dd></div>
+    <div><dt>Sean Dee (Towerpoint Games)</dt><dd>Grant Documentation Consultant</dd></div>
   </dl>
 </section>
 
