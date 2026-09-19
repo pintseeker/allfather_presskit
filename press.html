@@ -112,6 +112,7 @@
     max-width: 900px;
   }
   dl.credits dt { margin-top: 0; }
+  dl.credits { text-align: center; }
   dl.credits-lead {
     text-align: center;
     max-width: 900px;
@@ -119,7 +120,8 @@
   }
   dl.credits-lead dt {
     margin-top: 0;
-    font-size: 19px;
+    font-size: 24px;
+    font-weight: 700;
   }
   @media (max-width: 560px) {
     dl.credits { grid-template-columns: 1fr; }
@@ -196,6 +198,7 @@
     aspect-ratio: 16 / 9;
     max-width: 100%;
   }
+  .fact .video-frame { margin-bottom: 24px; }
   .video-frame iframe {
     position: absolute;
     inset: 0;
@@ -233,6 +236,9 @@
 <section id="factsheet">
   <div class="cols">
     <div class="fact">
+      <div class="video-frame" id="trailer">
+        <iframe src="https://www.youtube-nocookie.com/embed/OOHqhjWDbV0" title="ALLFATHER trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
       <h2>Factsheet</h2>
       <dl class="factsheet">
         <dt>Developer</dt>
@@ -284,13 +290,6 @@
     <li>A dark Norse world in a deliberate PSX-era visual style.</li>
     <li>An original soundtrack composed by the developer.</li>
   </ul>
-</section>
-
-<section id="trailer">
-  <h2>Trailer</h2>
-  <div class="video-frame">
-    <iframe src="https://www.youtube-nocookie.com/embed/OOHqhjWDbV0" title="ALLFATHER trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
 </section>
 
 <section id="images">
