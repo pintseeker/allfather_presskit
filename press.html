@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!--
-  ALLFATHER press kit. Single static page, no build step.
-  Hosted on GitHub Pages: commit + push to deploy.
+  ALLFATHER press kit page. Single static page, no build step.
+  Main marketing page is index.html; this page is the press-facing kit.
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ALLFATHER</title>
+<title>ALLFATHER Press Kit</title>
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
 <link rel="icon" type="image/png" sizes="256x256" href="assets/app-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,87 +32,22 @@
   a { color: var(--gold-bright); }
   a:hover { color: #fff; }
 
-  header.hero {
-    position: relative;
-    overflow: hidden;
-    background: url('assets/background-slide.png') center / cover no-repeat, var(--bg);
+  header.press {
     text-align: center;
-    padding: 56px 16px 48px;
+    padding: 48px 16px 36px;
     border-bottom: 2px solid var(--gold);
   }
-  header.hero video.hero-video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
-  header.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, .45);
-    z-index: 1;
-    pointer-events: none;
-  }
-  .hero-content { position: relative; z-index: 2; }
-  header.hero img.logo {
-    max-width: min(560px, 90%);
+  header.press img.logo {
+    max-width: min(420px, 90%);
     height: auto;
-    filter: drop-shadow(0 6px 24px rgba(0,0,0,.8));
-    margin-bottom: -70px;
+    margin-bottom: -52px;
   }
-  header.hero .wishlist { display: inline-block; }
-  header.hero .wishlist img {
-    max-width: 260px;
-    height: auto;
-    transition: transform .1s ease;
-  }
-  header.hero .wishlist img:hover { transform: scale(1.04); }
-  .wishlist-row { margin-top: 26px; }
-  header.hero h1 {
+  header.press h1 {
     margin: 0;
     font-size: 20px;
     color: var(--gold-bright);
     text-transform: uppercase;
     letter-spacing: .14em;
-    text-shadow: 0 2px 8px rgba(0,0,0,.9);
-  }
-  header.hero p.hero-desc {
-    max-width: 720px;
-    margin: 12px auto 0;
-    text-shadow: 0 2px 8px rgba(0,0,0,.9);
-  }
-  .platform-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 14px;
-  }
-  .platform-row a {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    padding: 9px 24px;
-    border: 1px solid var(--gold);
-    background: rgba(0,0,0,.55);
-    color: var(--gold-bright);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    font-size: 14px;
-  }
-  .platform-row a:hover {
-    background: var(--gold);
-    color: #14100a;
-  }
-  .platform-row svg {
-    width: 15px;
-    height: 15px;
-    fill: currentColor;
-    flex: none;
   }
 
   nav {
@@ -156,6 +91,20 @@
     margin: 34px 0 12px;
   }
 
+  .cols { display: flex; gap: 48px; flex-wrap: wrap; }
+  .cols > .fact { flex: 1 1 260px; }
+  .cols > .desc { flex: 2 1 400px; }
+  .cols > .desc h2 { margin-top: 0; }
+  dl.factsheet { margin: 0; }
+  dl.factsheet dt {
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: .14em;
+    margin-top: 14px;
+  }
+  dl.factsheet dd { margin: 2px 0 0; }
+
   .contact-row {
     display: flex;
     flex-wrap: wrap;
@@ -192,46 +141,6 @@
 
   .note { color: var(--ink-dim); font-size: 15px; font-style: italic; }
 
-  .newsletter-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    max-width: 560px;
-    margin: 8px 0 12px;
-  }
-  .newsletter-form input {
-    flex: 1 1 240px;
-    padding: 10px 14px;
-    font: inherit;
-    color: var(--ink);
-    background: rgba(0,0,0,.55);
-    border: 1px solid var(--rule);
-  }
-  .newsletter-form input:focus {
-    outline: none;
-    border-color: var(--gold);
-  }
-  .newsletter-form button {
-    padding: 9px 24px;
-    border: 1px solid var(--gold);
-    background: rgba(0,0,0,.55);
-    color: var(--gold-bright);
-    font: inherit;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    cursor: pointer;
-  }
-  .newsletter-form button:hover {
-    background: var(--gold);
-    color: #14100a;
-  }
-  .newsletter-form button:disabled {
-    opacity: .5;
-    cursor: default;
-  }
-  .newsletter-status { color: var(--gold-bright); }
-
   .video-frame {
     position: relative;
     aspect-ratio: 16 / 9;
@@ -254,45 +163,61 @@
 </head>
 <body>
 
-<header class="hero">
-  <video class="hero-video" src="assets/hero-clip.mp4" autoplay muted loop playsinline></video>
-  <div class="hero-content">
-    <img class="logo" src="assets/logo.png" alt="ALLFATHER logo">
-    <h1>First Person, Roguelike, Dungeon Crawler</h1>
-    <p class="hero-desc">A brutal, first-person roguelike with precise, stamina-driven combat. Play as a fallen shieldmaiden who rejects the judgement of the Valkyries. Proving to the gods she deserves their favour, she uses their blessings to crawl from the depths of Helheim to the halls of Valhalla.</p>
-    <div class="wishlist-row"><a class="wishlist" href="https://store.steampowered.com/app/4744230/ALLFATHER/"><img src="assets/wishlist-on-steam.png" alt="Wishlist ALLFATHER on Steam"></a></div>
-    <div class="platform-row">
-      <a href="https://www.youtube.com/@tommythedev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</a>
-      <a href="https://discord.gg/HPbaMKY79J"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>Discord</a>
-      <a href="https://www.reddit.com/r/AllfatherGame/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>Reddit</a>
-    </div>
-  </div>
+<header class="press">
+  <a href="index.html"><img class="logo" src="assets/logo.png" alt="ALLFATHER logo"></a>
+  <h1>Press Kit</h1>
 </header>
 
 <nav>
-  <a href="#playtest">Playtest</a>
-  <a href="#trailer">Trailer</a>
+  <a href="#factsheet">Factsheet</a>
   <a href="#features">Features</a>
-  <a href="#press-kit">Press Kit</a>
+  <a href="#trailer">Trailer</a>
+  <a href="#images">Images</a>
+  <a href="#credits">Credits</a>
   <a href="#contact">Contact</a>
+  <a href="index.html">Main Site</a>
 </nav>
 
 <main>
 
-<section id="playtest">
-  <h2>Join the Playtest</h2>
-  <p>Sign up to get FREE access to upcoming playtests. Newsletter members get invited to every ALLFATHER playtest and to playtests for future games, along with development news. You can unsubscribe at any time.</p>
-  <form class="newsletter-form" action="https://app.kit.com/forms/9937287/subscriptions" method="post">
-    <input type="email" name="email_address" required placeholder="Email address" aria-label="Email address" autocomplete="email">
-    <button type="submit">Sign up</button>
-  </form>
-  <p class="newsletter-status" hidden></p>
-</section>
+<section id="factsheet">
+  <h2>Factsheet</h2>
+  <div class="cols">
+    <div class="fact">
+      <dl class="factsheet">
+        <dt>Developer</dt>
+        <dd>Tommy McKay</dd>
+        <dt>Based in</dt>
+        <dd>Australia</dd>
+        <dt>Release date</dt>
+        <dd>Coming 2027</dd>
+        <dt>Platforms</dt>
+        <dd>PC (Steam, Windows)</dd>
+        <dt>Engine</dt>
+        <dd>Godot</dd>
+        <dt>Website</dt>
+        <dd><a href="https://allfathergame.com">allfathergame.com</a></dd>
+        <dt>Steam page</dt>
+        <dd><a href="https://store.steampowered.com/app/4744230/ALLFATHER/">store.steampowered.com/app/4744230/ALLFATHER</a></dd>
+        <dt>Press contact</dt>
+        <dd><a href="mailto:press@allfathergame.com">press@allfathergame.com</a></dd>
+        <dt>Social</dt>
+        <dd><a href="https://www.youtube.com/@tommythedev">YouTube</a> / <a href="https://discord.gg/HPbaMKY79J">Discord</a> / <a href="https://www.reddit.com/r/AllfatherGame/">Reddit</a></dd>
+      </dl>
+    </div>
+    <div class="desc" id="about">
+      <h2>About</h2>
+      <p>A brutal, first-person roguelike with precise, stamina-driven combat. Play as a fallen shieldmaiden who rejects the judgement of the Valkyries. Proving to the gods she deserves their favour, she uses their blessings to crawl from the depths of Helheim to the halls of Valhalla.</p>
 
-<section id="trailer">
-  <h2>Trailer</h2>
-  <div class="video-frame">
-    <iframe src="https://www.youtube-nocookie.com/embed/OOHqhjWDbV0" title="ALLFATHER trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <h3>Long description</h3>
+      <p>You were a shieldmaiden. You died well. The Valkyries sent you to Hel anyway. ALLFATHER is a first-person roguelike about refusing that judgement: fight your way up from the realm of the dead, through regions sealed behind their keepers, to the gates of Valhalla.</p>
+      <p>Combat runs in real time and rewards precision. Manage stamina, read attacks, block at the last moment to turn a hit into an opening, and choose weapons that change how you fight, from sword and shield to bow to a pair of axes. Enemies fight for position around you, and every room is a fight you cannot back out of: doors seal behind you, and the only way out is forward.</p>
+      <p>The gods are watching, and most of them are not on Odin's side. Level up and choose blessings from the Norse pantheon, spend gold at the dwarf Brokkr's forge for relics, and shape a different build every run. Death is permanent, but Hel's domain remembers you: unlock runes and weapons between runs and walk back in stronger.</p>
+      <p>The whole descent is rendered in a deliberately old-school low-poly style: dark, grainy, Norse.</p>
+
+      <h3>History</h3>
+      <p>ALLFATHER is the solo project of Tommy McKay, an Australian developer who previously shipped Gnomes and Sea of Survivors on Steam. It is built in Godot, with commissioned key art and a small circle of contract collaborators for 3D art, animation, and voice acting.</p>
+    </div>
   </div>
 </section>
 
@@ -309,8 +234,15 @@
   </ul>
 </section>
 
-<section id="press-kit">
-  <h2>Press Kit</h2>
+<section id="trailer">
+  <h2>Trailer</h2>
+  <div class="video-frame">
+    <iframe src="https://www.youtube-nocookie.com/embed/OOHqhjWDbV0" title="ALLFATHER trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section id="images">
+  <h2>Images</h2>
   <p class="note">Right click any image and choose "Save image as" to download the full-resolution file.</p>
 
   <h3>Logo</h3>
@@ -379,6 +311,22 @@
   </div>
 </section>
 
+<section id="credits">
+  <h2>Credits</h2>
+  <dl class="factsheet">
+    <dt>Tommy McKay</dt>
+    <dd>Design, programming, everything else</dd>
+    <dt>Anton Konrad (Arangemenk9000)</dt>
+    <dd>Lead 3D Art Supplier and Consultant</dd>
+    <dt>Max Ponsness</dt>
+    <dd>Voice Acting, The Shieldmaiden</dd>
+    <dt>Muhammad Danish</dt>
+    <dd>Character Animations</dd>
+    <dt>Giovanni Fim</dt>
+    <dd>Key art and capsule illustration</dd>
+  </dl>
+</section>
+
 <section id="contact">
   <h2>Contact</h2>
   <div class="contact-row">
@@ -393,39 +341,8 @@
 </main>
 
 <footer>
-  All images on this page may be used for coverage of the game. Press: <a href="press.html">press kit</a>.
+  ALLFATHER press kit. All images on this page may be used for coverage of the game.
 </footer>
-
-<script>
-  // Newsletter signup: posts to Kit in-page. With JS disabled the form
-  // still submits normally and lands on Kit's hosted confirmation page.
-  (function () {
-    var form = document.querySelector('.newsletter-form');
-    var status = document.querySelector('.newsletter-status');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var button = form.querySelector('button');
-      button.disabled = true;
-      status.hidden = true;
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function (res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        return res.json();
-      }).then(function () {
-        form.hidden = true;
-        status.textContent = 'Almost done. Check your email for a confirmation link.';
-        status.hidden = false;
-      }).catch(function () {
-        button.disabled = false;
-        status.textContent = 'Something went wrong. Please try again.';
-        status.hidden = false;
-      });
-    });
-  })();
-</script>
 
 </body>
 </html>
