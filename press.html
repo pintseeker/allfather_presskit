@@ -136,7 +136,18 @@
   .cols { display: flex; gap: 48px; flex-wrap: wrap; }
   .cols > .fact { flex: 1 1 260px; }
   .cols > .desc { flex: 2 1 400px; }
-  .cols .desc h2 + p { margin-top: 0; }
+  .cols h2 { clear: both; margin-top: 44px; }
+  .cols h2:first-child { margin-top: 0; }
+  .cols h2 + p, .cols .headshot + p { margin-top: 0; }
+  .headshot {
+    float: left;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 4px 20px 10px 0;
+  }
+  .fact .video-frame { margin-bottom: 0; }
   dl.factsheet { margin: 0; }
   dl.factsheet > dt:first-of-type { margin-top: 0; }
   dl.factsheet dt {
@@ -240,7 +251,6 @@
     aspect-ratio: 16 / 9;
     max-width: 100%;
   }
-  .fact .video-frame { margin-bottom: 24px; }
   .video-frame iframe {
     position: absolute;
     inset: 0;
@@ -281,7 +291,8 @@
 <section id="factsheet">
   <div class="cols">
     <div class="fact">
-      <div class="video-frame" id="trailer">
+      <h2 id="trailer">Trailer</h2>
+      <div class="video-frame">
         <iframe src="https://www.youtube-nocookie.com/embed/OOHqhjWDbV0" title="ALLFATHER trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <h2>Factsheet</h2>
@@ -307,18 +318,19 @@
       </dl>
     </div>
     <div class="desc" id="about">
+      <h2>From the Developer</h2>
+      <img class="headshot" src="assets/headshot.jpg" alt="Tommy McKay">
+      <p>ALLFATHER is my first solo project and my first 3D game. After shipping Gnomes and Sea of Survivors, I wanted to build something that shows the full range of what I can do, from the combat design to the soundtrack, which I am composing myself.</p>
+      <p>Every exchange in ALLFATHER is brutal but fair. There are no cheap deaths. Combat rewards awareness and patience over panic and button mashing.</p>
+
       <h2>About</h2>
       <p>A brutal, first-person roguelike with precise, stamina-driven combat. Play as a fallen shieldmaiden who rejects the judgement of the Valkyries. Proving to the gods she deserves their favour, she uses their blessings to crawl from the depths of Helheim to the halls of Valhalla.</p>
 
-      <h3>Long description</h3>
+      <h2>Long Description</h2>
       <p>You were a shieldmaiden. You died well. The Valkyries sent you to Hel anyway. ALLFATHER is a first-person roguelike about refusing that judgement: fight your way up from the realm of the dead, through regions sealed behind their keepers, to the gates of Valhalla.</p>
       <p>Combat runs in real time and rewards precision. Manage stamina, read attacks, block at the last moment to turn a hit into an opening, and choose weapons that change how you fight, from sword and shield to bow to a pair of axes. Enemies fight for position around you, and every room is a fight you cannot back out of: doors seal behind you, and the only way out is forward.</p>
       <p>The gods are watching, and most of them are not on Odin's side. Level up and choose blessings from the Norse pantheon, spend gold at the dwarf Brokkr's forge for relics, and shape a different build every run. Death is permanent, but Hel's domain remembers you: unlock runes and weapons between runs and walk back in stronger.</p>
       <p>The whole descent is rendered in a deliberately old-school low-poly style: dark, grainy, Norse.</p>
-
-      <h3>From the developer</h3>
-      <p>ALLFATHER is my first solo project and my first 3D game. After shipping Gnomes and Sea of Survivors, I wanted to build something that shows the full range of what I can do, from the combat design to the soundtrack, which I am composing myself.</p>
-      <p>Every exchange in ALLFATHER is brutal but fair. There are no cheap deaths. Combat rewards awareness and patience over panic and button mashing.</p>
     </div>
   </div>
 </section>
