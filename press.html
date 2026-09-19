@@ -133,13 +133,11 @@
     margin: 34px 0 12px;
   }
 
-  .cols { display: flex; gap: 48px; flex-wrap: wrap; }
-  .cols > .fact { flex: 1.15 1 320px; }
-  .cols > .desc { flex: 1 1 300px; }
-  .cols h2 { clear: both; margin-top: 44px; }
-  .cols h2:first-child { margin-top: 0; }
-  .cols h2 + p { margin-top: 0; }
+  #about h2 { margin-top: 44px; }
+  #about h2:first-child { margin-top: 0; }
+  #about h2 + p { margin-top: 0; }
   .headshot + p { margin-top: 0; }
+  #developer::after { content: ""; display: block; clear: both; }
   .headshot {
     float: left;
     width: 160px;
@@ -148,9 +146,16 @@
     object-fit: cover;
     margin: 4px 20px 10px 0;
   }
-  .fact .video-frame { margin-bottom: 0; }
   dl.factsheet { margin: 0; }
-  dl.factsheet > dt:first-of-type { margin-top: 0; }
+  dl.factsheet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 32px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  dl.factsheet-grid dt { margin-top: 0; }
   dl.factsheet dt {
     color: var(--gold);
     text-transform: uppercase;
@@ -178,7 +183,7 @@
     font-weight: 700;
   }
   @media (max-width: 560px) {
-    dl.credits { grid-template-columns: 1fr; }
+    dl.credits, dl.factsheet-grid { grid-template-columns: 1fr; }
   }
 
   .platform-row {
@@ -212,6 +217,7 @@
     flex: none;
   }
   .platform-row .as-is { text-transform: none; }
+  .platform-row.left { justify-content: flex-start; }
   .platform-row.contact-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -259,6 +265,15 @@
     height: 100%;
   }
 
+  .wishlist-row { margin-top: 22px; }
+  header.press .wishlist { display: inline-block; }
+  header.press .wishlist img {
+    max-width: 300px;
+    height: auto;
+    transition: transform .1s ease;
+  }
+  header.press .wishlist img:hover { transform: scale(1.04); }
+
   footer {
     text-align: center;
     color: var(--ink-dim);
@@ -274,13 +289,14 @@
   <div class="press-content">
     <a href="/"><img class="logo" src="assets/logo.png" alt="ALLFATHER logo"></a>
     <h1>Press Kit</h1>
+    <div class="wishlist-row"><a class="wishlist" href="https://store.steampowered.com/app/4744230/ALLFATHER/"><img src="assets/wishlist-on-steam.png" alt="Wishlist ALLFATHER on Steam"></a></div>
   </div>
 </header>
 
 <nav>
+  <a href="#trailer">Trailer</a>
   <a href="#factsheet">Factsheet</a>
   <a href="#features">Features</a>
-  <a href="#trailer">Trailer</a>
   <a href="#images">Images</a>
   <a href="#credits">Credits</a>
   <a href="#contact">Contact</a>
@@ -288,6 +304,19 @@
 </nav>
 
 <main>
+
+<section id="developer">
+  <h2>From the Developer</h2>
+  <img class="headshot" src="assets/headshot.jpg" alt="Tommy McKay">
+  <p>ALLFATHER is my first solo project and my first 3D game. After shipping Gnomes and Sea of Survivors, I wanted to build something that shows the full range of what I can do, from novel combat design to a soundtrack I'm composing myself. Every exchange in ALLFATHER is brutal but fair. There are no cheap deaths. Combat rewards awareness and patience over panic and button mashing.</p>
+  <div class="platform-row left">
+    <a href="https://store.steampowered.com/app/4744230/ALLFATHER/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>Steam</a>
+    <a href="https://www.youtube.com/@tommythedev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</a>
+    <a href="https://discord.gg/HPbaMKY79J"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>Discord</a>
+    <a href="https://www.reddit.com/r/AllfatherGame/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>Reddit</a>
+    <a href="https://bsky.app/profile/tommythedev.bsky.social"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>Bluesky</a>
+  </div>
+</section>
 
 <section id="trailer">
   <h2>Trailer</h2>
@@ -297,44 +326,26 @@
 </section>
 
 <section id="factsheet">
-  <div class="cols">
-    <div class="fact">
-      <h2>From the Developer</h2>
-      <img class="headshot" src="assets/headshot.jpg" alt="Tommy McKay">
-      <p>ALLFATHER is my first solo project and my first 3D game. After shipping Gnomes and Sea of Survivors, I wanted to build something that shows the full range of what I can do, from the combat design to the soundtrack, which I am composing myself. Every exchange in ALLFATHER is brutal but fair. There are no cheap deaths. Combat rewards awareness and patience over panic and button mashing.</p>
-      <h2>Factsheet</h2>
-      <dl class="factsheet">
-        <dt>Developer</dt>
-        <dd>Tommy McKay</dd>
-        <dt>Based in</dt>
-        <dd>Australia</dd>
-        <dt>Release date</dt>
-        <dd>Coming 2027</dd>
-        <dt>Platforms</dt>
-        <dd>PC (Steam, Windows)</dd>
-        <dt>Engine</dt>
-        <dd>Godot</dd>
-        <dt>Website</dt>
-        <dd><a href="https://allfathergame.com">allfathergame.com</a></dd>
-        <dt>Steam page</dt>
-        <dd><a href="https://store.steampowered.com/app/4744230/ALLFATHER/">store.steampowered.com/app/4744230/ALLFATHER</a></dd>
-        <dt>Press contact</dt>
-        <dd><a href="mailto:press@allfathergame.com">press@allfathergame.com</a></dd>
-        <dt>Social</dt>
-        <dd><a href="https://www.youtube.com/@tommythedev">YouTube</a> / <a href="https://discord.gg/HPbaMKY79J">Discord</a> / <a href="https://www.reddit.com/r/AllfatherGame/">Reddit</a> / <a href="https://bsky.app/profile/tommythedev.bsky.social">Bluesky</a></dd>
-      </dl>
-    </div>
-    <div class="desc" id="about">
-      <h2>About</h2>
+  <h2>Factsheet</h2>
+  <dl class="factsheet factsheet-grid">
+    <div><dt>Developer and Publisher</dt><dd>Tommy McKay</dd></div>
+    <div><dt>Based in</dt><dd>Australia</dd></div>
+    <div><dt>Release date</dt><dd>Coming 2027</dd></div>
+    <div><dt>Platforms</dt><dd>PC (Steam, Windows)</dd></div>
+    <div><dt>Engine</dt><dd>Godot</dd></div>
+    <div><dt>Press contact</dt><dd><a href="mailto:press@allfathergame.com">press@allfathergame.com</a></dd></div>
+  </dl>
+</section>
+
+<section id="about">
+  <h2>About</h2>
       <p>A brutal, first-person roguelike with precise, stamina-driven combat. Play as a fallen shieldmaiden who rejects the judgement of the Valkyries. Proving to the gods she deserves their favour, she uses their blessings to crawl from the depths of Helheim to the halls of Valhalla.</p>
 
-      <h2>Long Description</h2>
+      <h2>Description</h2>
       <p>You were a shieldmaiden. You died well. The Valkyries sent you to Hel anyway. ALLFATHER is a first-person roguelike about refusing that judgement: fight your way up from the realm of the dead, through regions sealed behind their keepers, to the gates of Valhalla.</p>
-      <p>Combat runs in real time and rewards precision. Manage stamina, read attacks, block at the last moment to turn a hit into an opening, and choose weapons that change how you fight, from sword and shield to bow to a pair of axes. Enemies fight for position around you, and every room is a fight you cannot back out of: doors seal behind you, and the only way out is forward.</p>
-      <p>The gods are watching, and most of them are not on Odin's side. Level up and choose blessings from the Norse pantheon, spend gold at the dwarf Brokkr's forge for relics, and shape a different build every run. Death is permanent, but Hel's domain remembers you: unlock runes and weapons between runs and walk back in stronger.</p>
-      <p>The whole descent is rendered in a deliberately old-school low-poly style: dark, grainy, Norse.</p>
-    </div>
-  </div>
+      <p>Combat runs in real time and rewards precision. Manage stamina, read attacks, block at the last moment to turn a hit into an opening, and unlock weapons that change how you fight. Enemies fight for position around you, every room is a fight you cannot back out of. Doors seal behind you, the only way out is forward.</p>
+      <p>The gods are watching, and most of them are not on Odin's side. Level up and choose blessings from the Norse pantheon, spend your gold at dwarven shops and find relics that shape a different build every run. Death is permanent, but Hel's domain remembers you: unlock runes and weapons between runs and walk back in stronger.</p>
+      <p>The whole descent is rendered in a deliberately retro PSX style: dark, grainy, Norse.</p>
 </section>
 
 <section id="features">
