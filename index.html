@@ -20,6 +20,7 @@
     --ink-dim: #9a8d74;
     --gold: #c9a24b;
     --gold-bright: #e8c877;
+    --rule: #3a2f1c;
   }
   * { box-sizing: border-box; }
   body {
@@ -37,6 +38,7 @@
     background: url('assets/background-slide.png') center / cover no-repeat, var(--bg);
     text-align: center;
     padding: 56px 16px 48px;
+    border-bottom: 2px solid var(--gold);
   }
   header.hero video.hero-video {
     position: absolute;
@@ -93,15 +95,19 @@
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    padding: 6px 10px;
+    padding: 9px 24px;
+    border: 1px solid var(--gold);
+    background: rgba(0,0,0,.55);
     color: var(--gold-bright);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: .12em;
     font-size: 14px;
-    text-shadow: 0 2px 8px rgba(0,0,0,.9);
   }
-  .platform-row a:hover { color: #fff; }
+  .platform-row a:hover {
+    background: var(--gold);
+    color: #14100a;
+  }
   .platform-row svg {
     width: 15px;
     height: 15px;
@@ -114,6 +120,7 @@
     top: 0;
     z-index: 10;
     background: rgba(14,11,8,.96);
+    border-bottom: 1px solid var(--rule);
     text-align: center;
     padding: 10px 8px;
   }
@@ -149,15 +156,18 @@
     margin: 34px 0 12px;
   }
 
-  dl.factsheet { margin: 0; }
-  dl.factsheet dt {
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 64px;
+    margin: 8px 0 24px;
+  }
+  .contact-row .label {
     color: var(--gold);
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: .14em;
-    margin-top: 14px;
   }
-  dl.factsheet dd { margin: 2px 0 0; }
 
   ul.features { padding-left: 22px; }
   ul.features li { margin: 10px 0; }
@@ -181,14 +191,6 @@
   }
 
   .note { color: var(--ink-dim); font-size: 15px; font-style: italic; }
-
-  .todo {
-    background: #4a3a10;
-    color: #ffd97a;
-    padding: 0 6px;
-    border-radius: 3px;
-    font-style: normal;
-  }
 
   .video-frame {
     position: relative;
@@ -328,18 +330,13 @@
 
 <section id="contact">
   <h2>Contact</h2>
-  <dl class="factsheet">
-    <dt>Press inquiries</dt>
-    <dd><a href="mailto:tommymckaybne@gmail.com">tommymckaybne@gmail.com</a></dd>
-    <dt>Steam</dt>
-    <dd><a href="https://store.steampowered.com/app/4744230/ALLFATHER/">ALLFATHER on Steam</a></dd>
-    <dt>YouTube</dt>
-    <dd><a href="https://www.youtube.com/@tommythedev">@tommythedev</a></dd>
-    <dt>Discord</dt>
-    <dd><a href="https://discord.gg/HPbaMKY79J">Join the Discord</a></dd>
-    <dt>Reddit</dt>
-    <dd><a href="https://www.reddit.com/r/AllfatherGame/">r/AllfatherGame</a></dd>
-  </dl>
+  <div class="contact-row">
+    <div><div class="label">Press inquiries</div><a href="mailto:tommymckaybne@gmail.com">tommymckaybne@gmail.com</a></div>
+    <div><div class="label">Steam</div><a href="https://store.steampowered.com/app/4744230/ALLFATHER/">ALLFATHER on Steam</a></div>
+    <div><div class="label">YouTube</div><a href="https://www.youtube.com/@tommythedev">@tommythedev</a></div>
+    <div><div class="label">Discord</div><a href="https://discord.gg/HPbaMKY79J">Join the Discord</a></div>
+    <div><div class="label">Reddit</div><a href="https://www.reddit.com/r/AllfatherGame/">r/AllfatherGame</a></div>
+  </div>
 </section>
 
 </main>
