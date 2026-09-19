@@ -134,11 +134,13 @@
   }
 
   .cols { display: flex; gap: 48px; flex-wrap: wrap; }
-  .cols > .fact { flex: 1 1 260px; }
-  .cols > .desc { flex: 2 1 400px; }
+  .cols > .fact { flex: 1 1 320px; }
+  .cols > .desc { flex: 1 1 320px; }
   .cols h2 { clear: both; margin-top: 44px; }
   .cols h2:first-child { margin-top: 0; }
-  .cols h2 + p, .cols .headshot + p { margin-top: 0; }
+  .cols h2 + p { margin-top: 0; }
+  #developer .headshot + p { margin-top: 0; }
+  #developer::after { content: ""; display: block; clear: both; }
   .headshot {
     float: left;
     width: 110px;
@@ -288,6 +290,13 @@
 
 <main>
 
+<section id="developer">
+  <h2>From the Developer</h2>
+  <img class="headshot" src="assets/headshot.jpg" alt="Tommy McKay">
+  <p>ALLFATHER is my first solo project and my first 3D game. After shipping Gnomes and Sea of Survivors, I wanted to build something that shows the full range of what I can do, from the combat design to the soundtrack, which I am composing myself.</p>
+  <p>Every exchange in ALLFATHER is brutal but fair. There are no cheap deaths. Combat rewards awareness and patience over panic and button mashing.</p>
+</section>
+
 <section id="factsheet">
   <div class="cols">
     <div class="fact">
@@ -318,11 +327,6 @@
       </dl>
     </div>
     <div class="desc" id="about">
-      <h2>From the Developer</h2>
-      <img class="headshot" src="assets/headshot.jpg" alt="Tommy McKay">
-      <p>ALLFATHER is my first solo project and my first 3D game. After shipping Gnomes and Sea of Survivors, I wanted to build something that shows the full range of what I can do, from the combat design to the soundtrack, which I am composing myself.</p>
-      <p>Every exchange in ALLFATHER is brutal but fair. There are no cheap deaths. Combat rewards awareness and patience over panic and button mashing.</p>
-
       <h2>About</h2>
       <p>A brutal, first-person roguelike with precise, stamina-driven combat. Play as a fallen shieldmaiden who rejects the judgement of the Valkyries. Proving to the gods she deserves their favour, she uses their blessings to crawl from the depths of Helheim to the halls of Valhalla.</p>
 
